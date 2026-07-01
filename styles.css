@@ -28,27 +28,27 @@ button { border: 0; border-radius: 8px; padding: 10px 15px; }
 .primary:hover { background: #20836b; }
 
 .workspace { min-height: calc(100vh - 76px); display: grid; grid-template-columns: minmax(400px, 43%) 1fr; }
-.editor-panel { padding: 26px clamp(20px, 3vw, 44px) 60px; background: #fff; box-shadow: 8px 0 30px #1d302514; z-index: 1; }
+.editor-panel { padding: 18px clamp(16px, 2.2vw, 30px) 36px; background: #fff; box-shadow: 8px 0 30px #1d302514; z-index: 1; }
 .document-tabs { display: grid; grid-template-columns: 1fr 1fr; padding: 4px; margin-bottom: 10px; border-radius: 10px; background: #eef1ef; }
 .doc-tab { padding: 12px; color: var(--muted); background: transparent; font-weight: 700; }
 .doc-tab.active { color: var(--green-dark); background: #fff; box-shadow: 0 2px 10px #263c3314; }
-.save-status { margin-bottom: 24px; color: var(--muted); font-size: 12px; text-align: right; }
+.save-status { margin-bottom: 16px; color: var(--muted); font-size: 12px; text-align: right; }
 .save-status.saved { color: var(--green); }
 .hidden { display: none !important; }
 
-fieldset { border: 0; padding: 0; margin: 0 0 34px; }
-legend { width: 100%; margin-bottom: 18px; padding-bottom: 10px; border-bottom: 1px solid var(--line); font-family: Georgia, "Yu Mincho", serif; font-size: 18px; font-weight: 700; }
+fieldset { border: 0; padding: 0; margin: 0 0 22px; }
+legend { width: 100%; margin-bottom: 12px; padding-bottom: 7px; border-bottom: 1px solid var(--line); font-family: Georgia, "Yu Mincho", serif; font-size: 17px; font-weight: 700; }
 legend span { margin-right: 9px; color: var(--green); font-size: 12px; font-family: inherit; }
-.field-grid { display: grid; gap: 16px; }
+.field-grid { display: grid; column-gap: 12px; row-gap: 8px; }
 .field-grid.two { grid-template-columns: 1fr 1fr; }
 .wide { grid-column: 1 / -1; }
-label { display: block; margin-bottom: 15px; color: #45534f; font-size: 13px; font-weight: 700; }
-input, textarea { width: 100%; margin-top: 7px; padding: 11px 12px; color: var(--ink); background: #fbfcfb; border: 1px solid #cad3d0; border-radius: 7px; outline: none; line-height: 1.6; resize: vertical; transition: .15s; }
+label { display: block; margin-bottom: 9px; color: #45534f; font-size: 13px; font-weight: 700; }
+input, textarea { width: 100%; margin-top: 5px; padding: 8px 10px; color: var(--ink); background: #fbfcfb; border: 1px solid #cad3d0; border-radius: 7px; outline: none; line-height: 1.5; resize: vertical; transition: .15s; }
 input:focus, textarea:focus { border-color: var(--green); background: #fff; box-shadow: 0 0 0 3px #176b5718; }
-.field-hint { margin: -8px 0 15px; color: var(--muted); font-size: 12px; }
+.field-hint { margin: -5px 0 10px; color: var(--muted); font-size: 12px; }
 .add-button { width: 100%; color: var(--green); background: var(--mint); border: 1px dashed #71a997; font-weight: 700; }
-.company-card { padding: 17px; margin-bottom: 16px; border: 1px solid var(--line); border-radius: 10px; background: #fbfcfb; }
-.company-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 13px; color: var(--green-dark); }
+.company-card { padding: 12px; margin-bottom: 11px; border: 1px solid var(--line); border-radius: 10px; background: #fbfcfb; }
+.company-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; color: var(--green-dark); }
 .remove-company { padding: 4px 7px; color: var(--danger); background: transparent; font-size: 12px; }
 
 .preview-panel { padding: 26px clamp(18px, 3vw, 50px) 70px; overflow: auto; background: #e8e6df; }
