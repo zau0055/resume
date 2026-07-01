@@ -22,6 +22,9 @@ button { cursor: pointer; }
 .brand span { color: #7ed2b4; font-style: italic; }
 .app-header > p { color: #bfc9c5; font-size: 13px; letter-spacing: .08em; }
 .header-actions { display: flex; gap: 10px; margin-left: auto; }
+.font-picker { display: flex; grid-template-columns: none; align-items: center; gap: 7px; margin: 0; color: #cbd4d1; font-size: 12px; white-space: nowrap; }
+.font-picker select { min-width: 132px; padding: 8px 28px 8px 9px; color: #fff; background: #34443f; border: 1px solid #61706b; border-radius: 7px; outline: none; }
+.font-picker select:focus { border-color: #7ed2b4; }
 button { border: 0; border-radius: 8px; padding: 10px 15px; }
 .ghost { color: #e8eeeb; background: transparent; border: 1px solid #53615d; }
 .ghost:hover { background: #34443f; }
@@ -89,6 +92,8 @@ input:focus, textarea:focus { border-color: var(--green); background: #fff; box-
   .app-header { height: auto; padding: 14px 16px; flex-wrap: wrap; gap: 6px 14px; }
   .app-header > p { display: none; }
   .header-actions { width: 100%; }
+  .font-picker { flex: 1 1 100%; }
+  .font-picker select { flex: 1; }
   .header-actions button { flex: 1; padding: 9px 6px; font-size: 12px; }
   .workspace { min-height: 0; }
   .editor-panel { padding: 20px 16px 40px; }

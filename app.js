@@ -1,5 +1,13 @@
 const STORAGE_KEY = 'career-canvas-v1';
-const state = { active: 'resume', resume: {}, career: {}, companies: [] };
+const state = { active: 'resume', font: 'ms-gothic', resume: {}, career: {}, companies: [] };
+
+const fonts = {
+  'ms-gothic': '"MS Gothic", "ＭＳ ゴシック", "Osaka-Mono", monospace',
+  'system-gothic': 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans", sans-serif',
+  'yu-gothic': '"Yu Gothic", "YuGothic", "Hiragino Kaku Gothic ProN", sans-serif',
+  mincho: '"Yu Mincho", "YuMincho", "Hiragino Mincho ProN", serif',
+  monospace: 'Consolas, Menlo, Monaco, "Courier New", monospace'
+};
 
 const $ = (selector, root = document) => root.querySelector(selector);
 const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
@@ -110,7 +118,14 @@ function switchDocument(documentName) {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
 }
 
+function applyFont() {
+  document.documentElement.style.setProperty('--font-main', fonts[state.font] || fonts['ms-gothic']);
+}
+
 function applyState(data) {
+  state.font = data.font || state.font || 'ms-gothic';
+  $('#fontSelect').value = state.font;
+  applyFont();
   fillForm($('#resumeForm'), data.resume);
   fillForm($('#careerForm'), data.career);
   $('#companies').innerHTML = '';
@@ -143,6 +158,11 @@ $$('.doc-tab').forEach(tab => tab.addEventListener('click', () => switchDocument
 $('#resumeForm').addEventListener('input', update);
 $('#careerForm').addEventListener('input', update);
 $('#addCompanyBtn').addEventListener('click', () => { addCompany(); update(); });
+$('#fontSelect').addEventListener('change', event => {
+  state.font = event.target.value;
+  applyFont();
+  update();
+});
 $('#printBtn').addEventListener('click', () => window.print());
 $('#sampleBtn').addEventListener('click', () => applyState(sample));
 $('#clearBtn').addEventListener('click', () => {
