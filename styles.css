@@ -1,0 +1,105 @@
+:root {
+  --ink: #20312d;
+  --muted: #6b7874;
+  --green: #176b57;
+  --green-dark: #0e5040;
+  --mint: #e8f2ee;
+  --cream: #f4f1e9;
+  --line: #d8dfdc;
+  --paper: #fff;
+  --danger: #a53f3f;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; color: var(--ink); background: var(--cream); font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif; }
+button, input, textarea { font: inherit; }
+button { cursor: pointer; }
+
+.app-header { height: 76px; padding: 0 28px; display: flex; align-items: center; gap: 24px; color: #fff; background: var(--ink); position: sticky; top: 0; z-index: 10; }
+.brand { color: #fff; font-family: Georgia, serif; font-size: 22px; font-weight: 700; letter-spacing: .03em; text-decoration: none; white-space: nowrap; }
+.brand span { color: #7ed2b4; font-style: italic; }
+.app-header > p { color: #bfc9c5; font-size: 13px; letter-spacing: .08em; }
+.header-actions { display: flex; gap: 10px; margin-left: auto; }
+button { border: 0; border-radius: 8px; padding: 10px 15px; }
+.ghost { color: #e8eeeb; background: transparent; border: 1px solid #53615d; }
+.ghost:hover { background: #34443f; }
+.primary { color: #fff; font-weight: 700; background: var(--green); box-shadow: 0 4px 14px #081d1766; }
+.primary:hover { background: #20836b; }
+
+.workspace { min-height: calc(100vh - 76px); display: grid; grid-template-columns: minmax(400px, 43%) 1fr; }
+.editor-panel { padding: 26px clamp(20px, 3vw, 44px) 60px; background: #fff; box-shadow: 8px 0 30px #1d302514; z-index: 1; }
+.document-tabs { display: grid; grid-template-columns: 1fr 1fr; padding: 4px; margin-bottom: 10px; border-radius: 10px; background: #eef1ef; }
+.doc-tab { padding: 12px; color: var(--muted); background: transparent; font-weight: 700; }
+.doc-tab.active { color: var(--green-dark); background: #fff; box-shadow: 0 2px 10px #263c3314; }
+.save-status { margin-bottom: 24px; color: var(--muted); font-size: 12px; text-align: right; }
+.save-status.saved { color: var(--green); }
+.hidden { display: none !important; }
+
+fieldset { border: 0; padding: 0; margin: 0 0 34px; }
+legend { width: 100%; margin-bottom: 18px; padding-bottom: 10px; border-bottom: 1px solid var(--line); font-family: Georgia, "Yu Mincho", serif; font-size: 18px; font-weight: 700; }
+legend span { margin-right: 9px; color: var(--green); font-size: 12px; font-family: inherit; }
+.field-grid { display: grid; gap: 16px; }
+.field-grid.two { grid-template-columns: 1fr 1fr; }
+.wide { grid-column: 1 / -1; }
+label { display: block; margin-bottom: 15px; color: #45534f; font-size: 13px; font-weight: 700; }
+input, textarea { width: 100%; margin-top: 7px; padding: 11px 12px; color: var(--ink); background: #fbfcfb; border: 1px solid #cad3d0; border-radius: 7px; outline: none; line-height: 1.6; resize: vertical; transition: .15s; }
+input:focus, textarea:focus { border-color: var(--green); background: #fff; box-shadow: 0 0 0 3px #176b5718; }
+.field-hint { margin: -8px 0 15px; color: var(--muted); font-size: 12px; }
+.add-button { width: 100%; color: var(--green); background: var(--mint); border: 1px dashed #71a997; font-weight: 700; }
+.company-card { padding: 17px; margin-bottom: 16px; border: 1px solid var(--line); border-radius: 10px; background: #fbfcfb; }
+.company-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 13px; color: var(--green-dark); }
+.remove-company { padding: 4px 7px; color: var(--danger); background: transparent; font-size: 12px; }
+
+.preview-panel { padding: 26px clamp(18px, 3vw, 50px) 70px; overflow: auto; background: #e8e6df; }
+.preview-toolbar { max-width: 794px; margin: 0 auto 12px; display: flex; justify-content: space-between; color: var(--muted); font-size: 12px; }
+.preview-toolbar i { display: inline-block; width: 7px; height: 7px; margin-right: 6px; border-radius: 50%; background: #37a878; box-shadow: 0 0 0 4px #37a87822; }
+.paper-label { border: 1px solid #bbc2bf; border-radius: 4px; padding: 2px 7px; }
+.paper { width: 210mm; min-height: 297mm; margin: 0 auto; padding: 16mm 17mm; background: var(--paper); box-shadow: 0 15px 40px #1d2e2825; color: #1c2724; font-family: "Yu Mincho", "Hiragino Mincho ProN", serif; font-size: 10.5pt; line-height: 1.65; }
+.paper h1 { margin: 0; text-align: center; font-size: 25pt; letter-spacing: .28em; font-weight: 500; }
+.paper h2 { margin: 7mm 0 2.5mm; padding: 1.5mm 2mm; border-left: 4px solid var(--green); border-bottom: 1px solid #9ba7a3; color: var(--green-dark); font-size: 13pt; }
+.paper p { white-space: pre-wrap; overflow-wrap: anywhere; }
+.doc-meta { margin: 5mm 0 7mm; text-align: right; line-height: 1.8; }
+.profile-grid { display: grid; grid-template-columns: 28mm 1fr; margin-top: 8mm; border-top: 1px solid #4d5955; border-left: 1px solid #4d5955; }
+.profile-grid dt, .profile-grid dd { min-height: 10mm; margin: 0; padding: 2.4mm 3mm; border-right: 1px solid #4d5955; border-bottom: 1px solid #4d5955; }
+.profile-grid dt { background: #f1f5f3; font-weight: 700; text-align: center; }
+.history-table { width: 100%; border-collapse: collapse; }
+.history-table th, .history-table td { padding: 2.4mm 3mm; border: 1px solid #68736f; vertical-align: top; }
+.history-table th { width: 32mm; background: #f1f5f3; font-weight: 700; }
+.history-title td { background: var(--mint); color: var(--green-dark); font-weight: 700; text-align: center; letter-spacing: .2em; }
+.text-box { min-height: 24mm; margin: 0; padding: 3mm; border: 1px solid #68736f; }
+.career-paper h1 { text-align: left; border-bottom: 3px double var(--ink); letter-spacing: .12em; }
+.career-section { break-inside: avoid; }
+.career-section > p { margin: 0; }
+.career-company { margin-top: 3mm; break-inside: avoid; }
+.career-company header { padding: 2mm 3mm; color: #fff; background: var(--green-dark); display: flex; justify-content: space-between; gap: 10px; }
+.career-company .business { margin: 0; padding: 2mm 3mm; background: #f1f5f3; border: 1px solid #a9b3af; border-top: 0; font-size: 9pt; }
+.career-company .details { min-height: 22mm; margin: 0; padding: 3mm; border: 1px solid #a9b3af; border-top: 0; }
+.empty-copy { color: #a3aaa7; }
+
+@media (max-width: 1100px) {
+  .workspace { grid-template-columns: 1fr; }
+  .preview-panel { border-top: 1px solid #d6d4cc; }
+  .paper { transform-origin: top center; }
+}
+@media (max-width: 650px) {
+  .app-header { height: auto; padding: 14px 16px; flex-wrap: wrap; gap: 6px 14px; }
+  .app-header > p { display: none; }
+  .header-actions { width: 100%; }
+  .header-actions button { flex: 1; padding: 9px 6px; font-size: 12px; }
+  .workspace { min-height: 0; }
+  .editor-panel { padding: 20px 16px 40px; }
+  .field-grid.two { grid-template-columns: 1fr; }
+  .wide { grid-column: auto; }
+  .preview-panel { padding: 20px 8px 40px; overflow: hidden; }
+  .paper { width: 210mm; transform: scale(.45); margin-bottom: calc(-297mm * .55); }
+}
+
+@page { size: A4; margin: 0; }
+@media print {
+  body { background: #fff; }
+  .app-header, .editor-panel, .preview-toolbar { display: none !important; }
+  .workspace, .preview-panel, #printArea { display: block; margin: 0; padding: 0; background: #fff; overflow: visible; }
+  .paper { width: 210mm; min-height: 297mm; margin: 0; padding: 14mm 16mm; box-shadow: none; transform: none; }
+  .paper.hidden { display: none !important; }
+}
